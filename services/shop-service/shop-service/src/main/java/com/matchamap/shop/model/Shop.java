@@ -2,11 +2,15 @@ package com.matchamap.shop.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.Data;
 import java.time.LocalDateTime;
 
 @Entity  // This is a database table
 @Table(name = "shops")
+@AllArgsConstructor  // Lombok: generate constructor with all fields
+@NoArgsConstructor   // Lombok: generate default constructor
 @Data  // Lombok: auto-generates getters/setters/toString
 public class Shop {
     
@@ -15,28 +19,28 @@ public class Shop {
     private Long id;
     
     @NotBlank(message = "Shop name is required")  // Validation: must not be blank
-    @Size(min = 2, max = 255, message = "Shop name must be between 2 and 255 characters")  // Validation: max length
+    @Size(min = 2, max = 255, message = "Shop name must be between 2 and 255 characters")  // name must be between 2 and 255 characters
     @Column(nullable = false, length = 255)  // Required field
     private String name;
     
     @NotBlank(message = "Address name is required")
-    @Size(max = 255, message = "Address must be at most 255 characters")
+    @Size(max = 255, message = "Address must be at most 255 characters") // max length of 255 characters
     @Column(nullable = false, length = 255)  // Required field
     private String address;
     
     @NotBlank(message = "City is required")
-    @Size(max = 100, message = "City must be at most 100 characters")
-    @Column(nullable = false, length = 100)  // require field & Max length of 100 characters
+    @Size(max = 100, message = "City must be at most 100 characters") // max length of 100 characters
+    @Column(nullable = false, length = 100)  // require field 
     private String city;
 
     @Column(length = 1000)  // Can hold 1000 characters
     private String description;
 
-    @Pattern(regexp = "^\\d{3}-\\d{3}-\\d{4}$", message = "Phone number must be in format: 123-456-7890")
-    @Column(name = "phone_number", length = 12)
+    @Pattern(regexp = "^\\d{3}-\\d{3}-\\d{4}$", message = "Phone number must be in format: 123-456-7890") // US phone number format
+    @Column(name = "phone_number", length = 12) // 12 characters including dashes
     private String phoneNumber;
     
-    @Size(max = 255, message = "Website URL must not exceed 255 characters")
+    @Size(max = 255, message = "Website URL must not exceed 255 characters") // max length of 255 characters
     @Column(length = 255)
     private String website;
     
