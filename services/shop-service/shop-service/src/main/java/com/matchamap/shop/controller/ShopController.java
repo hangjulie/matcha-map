@@ -23,6 +23,21 @@ public class ShopController {
         return shopService.getAllShops();
     }
     
+     // GET /api/shops/city get all ciities with matcha shops
+    @GetMapping("/city")
+    public ResponseEntity<List<String>> getAllCities() {
+        List<String> cities = shopService.getAllCities();
+        return ResponseEntity.ok(cities);
+    }
+
+    // GET /api/shops/city/{city name} get all shops in a city
+    @GetMapping("/city/{city}")
+    public ResponseEntity<List<Shop>> getShopsByCity(@PathVariable String city) {
+        List<Shop> shops = shopService.getShopsByCity(city);
+        return ResponseEntity.ok(shops);
+    }
+
+
     // GET /api/shops/1 - Get shop by ID
     @GetMapping("/{id}")
     public ResponseEntity<Shop> getShopById(@PathVariable Long id) {
