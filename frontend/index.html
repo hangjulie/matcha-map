@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍵 Matcha Finder - Bay Area</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>🍵 Matcha Finder</h1>
+        <p>Discover the best matcha shops in the Bay Area</p>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Filter by City</h2>
+            <div id="cityFilter">
+                <label>
+                    <input type="radio" name="city" value="" checked>
+                    All Cities
+                </label>
+            </div>
+
+            <h2>Shops</h2>
+            <div id="shopList" class="shop-list">
+                <!-- Shops will be loaded here by JavaScript -->
+                <p class="loading">Loading shops...</p>
+            </div>
+        </aside>
+
+        <!-- Map -->
+        <main class="map-container">
+            <div id="map"></div>
+        </main>
+    </div>
+
+    <!-- Shop Detail Modal (hidden by default) -->
+    <div id="shopModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="shopDetails">
+                <!-- Shop details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Google Maps API -->
+    <!-- Configuration -->
+    <script src="config.js"></script>
+
+    <!-- Google Maps API - loaded dynamically -->
+    <script>
+        const script = document.createElement('script');
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${CONFIG.GOOGLE_MAPS_API_KEY}&callback=initMap`;
+        script.async = true;
+        script.defer = true;
+        document.head.appendChild(script);
+    </script>
+    
+    <!-- Our JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>

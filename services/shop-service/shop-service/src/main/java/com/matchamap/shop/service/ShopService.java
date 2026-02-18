@@ -64,6 +64,8 @@ public class ShopService {
         shop.setName(shopDetails.getName());
         shop.setAddress(shopDetails.getAddress());
         shop.setCity(shopDetails.getCity());
+        shop.setLatitude(shopDetails.getLatitude());
+        shop.setLongitude(shopDetails.getLongitude());
         shop.setDescription(shopDetails.getDescription());
         shop.setPhoneNumber(shopDetails.getPhoneNumber());
         shop.setWebsite(shopDetails.getWebsite());

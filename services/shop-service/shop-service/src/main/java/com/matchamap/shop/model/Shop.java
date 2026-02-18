@@ -33,6 +33,14 @@ public class Shop {
     @Column(nullable = false, length = 100)  // require field 
     private String city;
 
+    @NotNull
+    @Column(nullable = false)
+    private Double latitude;
+    
+    @NotNull
+    @Column(nullable = false)
+    private Double longitude;
+
     @Column(length = 1000)  // Can hold 1000 characters
     private String description;
 
