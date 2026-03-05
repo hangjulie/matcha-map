@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: matcha-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: matchafinder
+    ports:
+      - "5432:5432"
+    networks:
+      - matcha-network
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  shop-service:
+    build: ./services/shop-service/shop-service
+    container_name: shop-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - matcha-network
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+
+networks:
+  matcha-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
