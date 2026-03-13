@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shop-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shop-service
+  template:
+    metadata:
+      labels:
+        app: shop-service
+    spec:
+      containers:
+      - name: shop-service
+        image: shop-service:1.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8081
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          valueFrom:
+            configMapKeyRef:
+              name: shop-service-config
+              key: SPRING_PROFILE
+        - name: DATABASE_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: shop-service-config
+              key: DATABASE_HOST
+        - name: DATABASE_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: shop-service-config
+              key: DATABASE_PORT
+        - name: DATABASE_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: shop-service-config
+              key: DATABASE_NAME
+        resources:
+          requests:
+            memory: "512Mi" # guaranteed minimum memory allocation for the container 512MB
+            cpu: "500m" # guaranteed minimum CPU allocation for the container 500 millicores (0.5 CPU)
+          limits:
+            memory: "1Gi" # maximum memory allocation for the container 1GB
+            cpu: "1000m" # maximum CPU allocation for the container 1000 millicores (1 CPU)
+      
+        
+        

@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:15
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: postgres-secret
+              key: POSTGRES_USER
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgres-secret
+              key: POSTGRES_PASSWORD
+        - name: POSTGRES_DB
+          valueFrom:
+            secretKeyRef:
+              name: postgres-secret
+              key: POSTGRES_DB
+        resources:
+          requests:
+            memory: "256Mi" # guaranteed minimum memory allocation for the container 256MB
+            cpu: "250m" # guaranteed minimum CPU allocation for the container 250 millicores (0.25 CPU)
+          limits:
+            memory: "512Mi" # maximum memory allocation for the container 512MB
+            cpu: "500m" # maximum CPU allocation for the container 500 millicores (0.5 CPU)
+        livenessProbe:
+          exec:
+            command:
+            - pg_isready
+            - -U
+            - postgres
+          initialDelaySeconds: 30 # wait 30s before performing 1st health check to allow the database to start up
+          periodSeconds: 10 # perform health check every 10s
+          timeoutSeconds: 5 # if the health check takes longer than 5s, consider it a failure
+          failureThreshold: 3 # if the health check fails 3 times in a row, restart the container
+        readinessProbe:
+          exec:
+            command:
+            - pg_isready
+            - -U
+            - postgres
+          initialDelaySeconds: 30 # wait 30s before performing 1st health check to allow the database to start up
+          periodSeconds: 10 # perform health check every 10s    
+          timeoutSeconds: 5 # if the health check takes longer than 5s, consider it a failure
+          failureThreshold: 3 # if the health check fails 3 times in a row,  

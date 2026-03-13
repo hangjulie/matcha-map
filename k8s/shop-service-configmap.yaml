@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: shop-service-config
+data:
+  DATABASE_HOST: matcha-postgres # service name of PostgresSQL deployment
+  DATABASE_PORT: "5432" # PostgresSQL port
+  DATABASE_NAME: matchafinder # Database name
+  SPRING_PROFILE: docker # spring profile to use in the shop-service application, set to "docker" for Docker environment
