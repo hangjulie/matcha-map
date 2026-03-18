@@ -1,0 +1,140 @@
+description: list of matcha shops in SF Bay Area
+feel free to use different ones or add more
+
+{
+  "name": "Arisan Tea & Coffee House",
+  "address": "979 Story Rd Unit 7012, San Jose, CA 95122",
+  "city": "San Jose",
+  "latitude": 37.331338477055866, 
+  "longitude": -121.85722961488854,
+  "description": "Matcha specialties (including latte, milk tea, and tiramisu varieties) served in a cozy setting",
+  "phoneNumber": "408-642-5978",
+  "website": "https://arisandrinks.square.site/"
+}
+
+{
+  "name": "Matcha Town",
+  "address": "10815 N Wolfe Rd STE 102, Cupertino, CA 95014",
+  "city": "Cupertino",
+  "latitude": 37.33553073951787,
+  "longitude": -122.01463378465884,
+  "description": "Matcha specialties including drinks, gelato, and cakes",
+  "phoneNumber": "669-230-6173",
+  "website": "https://www.instagram.com/matchatownus/?hl=en"
+}
+
+{
+  "name": "Taidaima Mission",
+  "address": "3515 20th St B, San Francisco, CA 94110",
+  "city": "San Francisco",
+  "latitude": 37.7585,
+  "longitude": -122.4195,
+  "description": "Modern cafe for familiar Japanese sandwiches and other eats, plus drinks such as matcha tea.",
+  "phoneNumber": "415-638-0092",
+  "website": "https://tadaimasf.com/"
+}
+
+{
+  "name": "Tea on Piedmont",
+  "address": "4098 Piedmont Ave, Oakland, CA 94611",
+  "city": "Oakland",
+  "latitude": 37.82660,
+  "longitude": -122.2520,
+  "description": "Tea on Piedmont; tea cafe with desserts and boba in downtown Oakland",
+  "phoneNumber": "510-947-4663",
+  "website": "https://www.teaonpiedmont.com/"
+}
+
+{
+  "name": "Yume Mori",
+  "address": "2319 Shattuck Ave., Berkeley, CA 94704",
+  "city": "Berkeley",
+  "latitude": 37.8674,
+  "longitude": -122.2666,
+  "description": "Student-friendly matcha spot near UC Berkeley",
+  "website": "https://www.instagram.com/yumemori.matcha/"
+}
+
+{
+  "name": "Maruwu Seicha",
+  "address": "250 University Ave STE 101, Palo Alto, CA 94301",
+  "city": "Palo Alto",
+  "latitude": 37.4455,
+  "longitude": -122.1619,
+  "description": "Traditional matcha experience near Stanford",
+  "phoneNumber": "650-800-7098",
+  "website": "https://www.maruwuseicha.us/"
+}
+
+{
+  "name": "Junbi Matcha & Tea",
+  "address": "450 San Antonio Rd STE K, Mountain View, CA 94040",
+  "city": "Mountain View",
+  "latitude": 37.40418,
+  "longitude": -122.11210,
+  "description": "Matcha lattes, refreshing matcha fruit drinks and teas",
+  "phoneNumber": "650-398-0704",
+  "website": "https://www.instagram.com/junbimountainview/?hl=en"
+}
+
+{
+  "name": "TANING",
+  "address": "715 Sunnyvale Saratoga Rd, Sunnyvale, CA 94087",
+  "city": "Sunnyvale",
+  "latitude": 37.367406620016965,
+  "longitude": -122.03350737301174,
+  "description": "specialize in freshly crafted lemon tea–based drinks that blend traditional flavors with a contemporary lifestyle approach",
+  "phoneNumber": "408-789-8420",
+  "website": "https://www.taningca.com/"
+}
+
+{
+  "name": "Izumi Matcha",
+  "address": "19740 Stevens Creek Blvd, Cupertino, CA 95014",
+  "city": "Cupertino",
+  "latitude": 37.321970640597755,
+  "longitude": -122.01810134916808,
+  "description": "preminum matcha lattes and ice cream",
+  "website": "https://izumimatcha.com/"
+}
+
+{
+  "name": "Izumi Matcha",
+  "address": "3005 Silver Creek Rd STE 142, San Jose, CA 95121",
+  "city": "San Jose",
+  "latitude": 37.3085980757842,
+  "longitude": -121.81389674557163,
+  "description": "preminum matcha lattes and ice cream",
+  "website": "https://izumimatcha.com/"
+}
+
+{
+  "name": "Stonemill Matcha",
+  "address": "561 Valencia St, San Francisco, CA 94110",
+  "city": "San Francisco",
+  "latitude": 37.76414197212603,
+  "longitude": -122.42160414232941,
+  "description": "Matcha-based beverages & light Japanese bites served in a relaxed, minimalist space.",
+  "website": "https://www.stonemillmatcha-us.com/"
+}
+
+{
+  "name": "HeyTea",
+  "address": "19469 Stevens Creek Blvd, Cupertino, CA 95014",
+  "city": "Cupertino",
+  "latitude": 37.32420643003907,
+  "longitude": -122.01046528465884,
+  "description": "known for using high-quality, natural ingredients—real milk, real fruit, and real tea",
+  "website": "https://www.heytea.com/"
+}
+
+{
+  "name": "Molly Tea",
+  "address": "605 E El Camino Real STE 1, Sunnyvale, CA 94087",
+  "city": "Sunnyvale",
+  "latitude": 37.362181335618,
+  "longitude": -122.0235599077297,
+  "description": "Offers premium bubble tea and matcha experiences",
+  "phoneNumber": "669-248-5934",
+  "website": "https://usa.mollytea.com/"
+}
