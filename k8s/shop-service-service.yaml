@@ -8,4 +8,5 @@ spec:
   ports:
   - port: 8081
     targetPort: 8081
-  type: NodePort
+  #type: NodePort # for local development
+  type: LoadBalancer # for AWS EKS

@@ -14,8 +14,15 @@ spec:
     spec:
       containers:
       - name: shop-service
-        image: shop-service:1.0
-        imagePullPolicy: IfNotPresent
+        # for local development, you can use the following line to reference the image built locally:
+        image: shop-service:1.0 # This is the name and tag of the Docker image for the shop-service container
+        imagePullPolicy: IfNotPresent # This policy tells Kubernetes to pull the image only if it is not already present on the node
+
+        # For AWS ECR, you would replace the image field with the following line, using your actual AWS account ID, region, and repository name:
+        # replace YOUR_AWS_ACCOUNT_ID, YOUR_REGION, and matcha-shop-service with your actual values
+        #image: YOUR_AWS_ACCOUNT_ID.dkr.ecr.YOUR_REGION.amazonaws.com/matcha-shop-service:latest # This is the name and tag of the Docker image for the shop-service container in AWS ECR
+        #imagePullPolicy: Always
+
         ports:
         - containerPort: 8081
         env:

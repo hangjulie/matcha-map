@@ -1,0 +1,9 @@
+# Database Configuration (DOCKER)
+spring:
+  datasource:
+    url: jdbc:postgresql://matcha-postgres:5432/matchafinder
+    username: postgres
+    password: postgres
+
+server:
+  port: 8081

@@ -70,7 +70,7 @@ function displayShops(shops) {
 // Load city filter options
 async function loadCityFilter() {
     try {
-        const response = await fetch(`${API_BASE_URL}/cities`);
+        const response = await fetch(`${API_BASE_URL}/city`);
         const cities = await response.json();
         
         const cityFilter = document.getElementById('cityFilter');
